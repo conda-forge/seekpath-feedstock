@@ -1,6 +1,6 @@
 {% set name = "seekpath" %}
-{% set version = "1.8.4" %}
-{% set sha256 = "b61dadba82acc0838402981b7944155adc092b114ca81f53f61b1d498a512e3a" %}
+{% set version = "1.9.0" %}
+{% set sha256 = "f5f76c8603aedfd1c4b7cfc2a217516dbb192591b8b37979874db8e59befd90f" %}
 
 package:
   name: "{{ name|lower }}"
