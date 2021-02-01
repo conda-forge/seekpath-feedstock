@@ -5,11 +5,9 @@ Home: http://github.com/giovannipizzi/seekpath
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/seekpath-feedstock/blob/master/LICENSE.txt)
 
 Summary: A module to obtain and visualize k-vector coefficients and obtain band paths in the Brillouin zone of crystal structures.
-
-
 
 Current build status
 ====================
