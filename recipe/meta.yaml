@@ -18,9 +18,9 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - future >=0.15
     - numpy >=1.0
     - spglib >=1.9.4
