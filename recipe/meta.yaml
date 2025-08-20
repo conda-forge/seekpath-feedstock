@@ -22,7 +22,6 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - future >=0.15
     - numpy >=1.0
     - spglib >=1.9.4
 
