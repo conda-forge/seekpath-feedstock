@@ -1,6 +1,6 @@
 {% set name = "seekpath" %}
-{% set version = "2.1.0" %}
-{% set sha256 = "31cec579628262e6d4a4c3693fefa70d6ccae1ceeef7c9d10ea3cd48988452c4" %}
+{% set version = "2.2.0" %}
+{% set sha256 = "4e7f5bbd57f7eba14d03cff56611fd2fc8e49c1e0e4ab1ab972396ceba6ec010" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
