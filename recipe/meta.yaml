@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
+    - flit-core
   run:
     - python >={{ python_min }}
     - numpy >=1.0
