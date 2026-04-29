@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
@@ -38,7 +38,7 @@ about:
   home: http://github.com/giovannipizzi/seekpath
   license: MIT
   license_family: MIT
-  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
+  license_file: LICENSE.txt
   summary: A module to obtain and visualize k-vector coefficients and obtain band paths in the Brillouin zone of crystal structures.
 
 extra:
