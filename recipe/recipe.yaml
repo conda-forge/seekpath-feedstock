@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: seekpath
-  version: "2.2.1"
-  sha256: 10906f13e3db5ed511b85ada2c0eba9f90ae764078a21809035561b0116a66a3
+  version: "2.2.2"
+  sha256: d3bb08b7fb21d5cff5fc27aff9904a865da5e0648fc0f8fef699642d88e27f2b
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
@@ -22,12 +22,13 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - flit-core
+    - flit-core >=3.4,<4
   run:
     - python >=${{ python_min }}
     - numpy >=1.0
-    - spglib >=1.9.4
-    - scipy
+    - packaging
+    - spglib >=1.14.1
+    - scipy >=1
 
 tests:
   - python:
@@ -35,13 +36,21 @@ tests:
         - seekpath
         - seekpath.brillouinzone
         - seekpath.hpkot
-      pip_check: false
-      python_version: ${{ python_min }}
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - python -c "import seekpath; seekpath.get_path(([[1, 0, 0], [0, 1, 0], [0, 0, 1]], [[0, 0, 0]], [1]))"
+      - python -c "import seekpath; seekpath.get_explicit_k_path(([[1, 0, 0], [0, 1, 0], [0, 0, 1]], [[0, 0, 0]], [1]))"
 about:
   license: MIT
   license_file: LICENSE.txt
   summary: A module to obtain and visualize k-vector coefficients and obtain band paths in the Brillouin zone of crystal structures.
-  homepage: http://github.com/giovannipizzi/seekpath
+  homepage: https://github.com/materialscloud-org/seekpath
 
 extra:
   recipe-maintainers:
