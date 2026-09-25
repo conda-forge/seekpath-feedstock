@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: seekpath
-  version: "2.2.1"
-  sha256: 10906f13e3db5ed511b85ada2c0eba9f90ae764078a21809035561b0116a66a3
+  version: "2.2.2"
+  sha256: d3bb08b7fb21d5cff5fc27aff9904a865da5e0648fc0f8fef699642d88e27f2b
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
